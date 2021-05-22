@@ -81,9 +81,9 @@ vector<complex<double>> fft(vector<complex<double>> input)
     vector<complex<double>> fftArray(N,0);
     for(int k=0; k<N/2; k++)
     {   
-        double angel = (-2*pi*k)/N;
-        double CosA = cos(angel);
-        double SinA = sin(angel);
+        double angle = (-2*pi*k)/N;
+        double CosA = cos(angle);
+        double SinA = sin(angle);
         complex<double>temp(CosA, SinA);
         
         fftArray[k] = Feven[k]+ temp*Fodd[k];
@@ -106,9 +106,9 @@ vector<complex<double>> ft(vector<complex<double>> input)
         sum = complex<double>(0,0);
         for(int n=0; n<N; n++)
         {
-            double angel = (2*pi*k*n)/N;
-            double CosA = cos(angel);
-            double SinA = sin(angel);
+            double angle = (2*pi*k*n)/N;
+            double CosA = cos(angle);
+            double SinA = sin(angle);
             complex<double>temp(CosA, -SinA);
             
             sum += input[n] * temp;
